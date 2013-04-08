@@ -1,0 +1,18 @@
+<html ng-app>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+	<script src="http://eu.battle.net/d3/static/js/tooltips.js"></script>
+	<script src="D3.js"></script>
+</head>
+
+<body ng-controller="D3Controller">
+	<div ng-controller="ProfileController">
+		<ul>
+			<li ng-repeat="hero in data.heroes">
+			  {{hero.name}} (lvl {{hero.level}}, plvl {{hero.paragonLevel}})
+			</li>
+		</ul>
+	</div>
+</body>
+
+</html>
