@@ -1,0 +1,24 @@
+<div class="view">
+    <div class="container">
+        Profile:<input ng-model="profileId" />
+        <button ng-click="fetch()">Fetch</button>
+
+        <div>
+            Search:
+            <input ng-model="query">
+            Sort by:
+        <select ng-model="orderProp">
+            <option value="name">Alphabetical</option>
+            <option value="level">Level</option>
+        </select>
+        </div>
+
+        <div>
+            <ul>
+                <li ng-repeat="hero in profile.heroes | filter:query | orderBy:orderProp">
+                    <a href="#/hero/{{hero.id}}">{{hero.name}} - {{hero.level}} - {{hero.class}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

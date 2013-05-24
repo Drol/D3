@@ -1,13 +1,35 @@
+<!DOCTYPE html>
 <html ng-app="diablo3App">
 <head>
     <title>D3</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
-    <script src="http://eu.battle.net/d3/static/js/tooltips.js"></script>
-    <script src="D3.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="css/D3.css" rel="stylesheet" />
 </head>
 
 <body ng-controller="D3Controller">
-    <div ng-view></div>
-</body>
+    <!--Header-->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#/">D3-lek
+                </a>
+                <ul class="nav" data-ng-controller="NavbarController">
+                    <li data-ng-class="{'active':getClass('/profile')}"><a href="#/profile">Profile</a></li>
+                    <li data-ng-class="{'active':getClass('/heroes')}"><a href="#/heroes">Heroes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
+    <div ng-view=""></div>
+
+    <!--Scripts-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//eu.battle.net/d3/static/js/tooltips.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/D3.js"></script>
+</body>
 </html>
