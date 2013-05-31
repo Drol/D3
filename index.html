@@ -18,12 +18,13 @@
                 <ul class="nav" data-ng-controller="NavbarController">
                     <li data-ng-class="{'active':getClass('/profile')}"><a href="#/profile">Profile</a></li>
                     <li data-ng-class="{'active':getClass('/heroes')}"><a href="#/heroes">Heroes</a></li>
+                    <li data-ng-class="{'active':getClass('/gemcalc')}"><a href="#/gemcalc">Gem Calculator</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div ng-view=""></div>
+    <div class="view container" ng-view=""></div>
 
     <!--Scripts-->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>

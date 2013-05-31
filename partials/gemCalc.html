@@ -1,0 +1,52 @@
+<form class="form-horizontal" ng-submit="submit()">
+    <fieldset>
+        <legend>Gem calculator</legend>
+
+        <div class="control-group">
+            <label class="control-label">Start gem</label>
+            <div class="controls">
+                <select class="input-medium" ng-model="input.startGem" ng-options="g.name for g in gems"></select>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Target gem</label>
+            <div class="controls">
+                <select class="input-medium" ng-model="input.targetGem" ng-options="g.name for g in gems"></select>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Quantity</label>
+            <div class="controls">
+                <input type="text" class="input-small" ng-model="input.quantity" />
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Tome of Secrets Price</label>
+            <div class="controls">
+                <input type="text" class="input-small" ng-model="input.tomeOfSecretsPrice" />
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Tome of Jewelcrafting Price</label>
+            <div class="controls">
+                <input type="text" class="input-small" ng-model="input.tomeOfJewelcraftingPrice" />
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Page of Jewelcrafting Price</label>
+            <div class="controls">
+                <input type="text" class="input-small" ng-model="input.pageOfJewelcraftingPrice" />
+            </div>
+        </div>
+    </fieldset>
+</form>
+<div>
+    <div>{{res.gems.amount}}</div>
+    <div>{{res.gems.cost}}</div>
+    <div>{{res.gems.total}}</div>
+</div>
