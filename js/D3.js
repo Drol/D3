@@ -75,21 +75,6 @@ app.controller('HeroDetailController', function ($scope, $routeParams, factory) 
 });
 
 app.controller('GemCalcController', function ($scope, $routeParams, factory) {
-    //$scope.qualities = [{ cost: 1, tier: 0, name: 'Chipped' },
-    //    { cost: 1, tier: 1, name: 'Flawed' },
-    //    { cost: 1, tier: 2, name: 'Normal' },
-    //    { cost: 1, tier: 3, name: 'Flawless' },
-    //    { cost: 1, tier: 4, name: 'Perfect' },
-    //    { cost: 1, tier: 5, name: 'Radiant' },
-    //    { cost: 1, tier: 6, name: 'Square' },
-    //    { cost: 1, tier: 7, name: 'Flawless Square' },
-    //    { cost: 1, tier: 8, name: 'Perfect Square' },
-    //    { cost: 1, tier: 9, name: 'Radiant Square' },
-    //    { cost: 1, tier: 10, name: 'Star' },
-    //    { cost: 1, tier: 11, name: 'Flawless Star' },
-    //    { cost: 1, tier: 12, name: 'Perfect Star' },
-    //    { cost: 1, tier: 13, name: 'Radiant Star' },
-    //    { cost: 1, tier: 14, name: 'Marquise' }];
     $scope.gems = [];
 
     factory.getArtisan('jeweler').then(function (jeweler) {
@@ -102,7 +87,7 @@ app.controller('GemCalcController', function ($scope, $routeParams, factory) {
                 if (recipe.name === '') recipe.name = 'Normal';
                 $scope.gems.push(recipe);
             }
-        }
+        };
 
         angular.forEach(jeweler.data.training.tiers, function (tier, key) {
             angular.forEach(tier.levels[0].trainedRecipes, function (recipe) {
@@ -119,17 +104,16 @@ app.controller('GemCalcController', function ($scope, $routeParams, factory) {
 
     $scope.input = {};
 
-
-    $scope.res = {
-        gems: {
-            amount: 0, cost: 0, total: 0
-        }
-    };
-
     $scope.$watch('input', function () {
         //angular.forEach($scope.input, function (value, key) {
         //    console.log(key + ': ' + value);
         //});
         $scope.res.gems.amount = 34;
     }, true);
+
+    $scope.res = {
+        gems: {
+            amount: 0, cost: 0, total: 0
+        }
+    };
 });
